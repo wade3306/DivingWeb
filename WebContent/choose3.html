@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+	crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+<link rel="stylesheet" type="text/css" href="./choose3.css">
+
+
+<link
+	href="https://fonts.googleapis.com/css?family=Noto+Sans+TC|Open+Sans&display=swap"
+	rel="stylesheet">
+
+<link rel="stylesheet" href="mainStyle.css">
+<link rel="stylesheet" href="convertM2C.css">
+
+<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/68f8681dba.js"
+	crossorigin="anonymous"></script>
+
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
+
+<head>
+<meta charset="UTF-8">
+<title>潛點搜尋</title>
+</head>
+<body>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog modal-md" role="document">
+			<div class="modal-content">
+
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">帳號登入</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<div class="modal-body">
+					<div class="media-body">
+						<div class="form-box">
+
+							<div class="button-box">
+								<div id="btn"></div>
+								<button type="button" class="toggle-btn" onclick="login()">會員登入</button>
+								<button type="button" class="toggle-btn" onclick="register()">廠商登入</button>
+							</div>
+
+							<div id="mlogin" class="input-group">
+								<!-- 可能會有問題 -->
+								<!-- 修改會員帳號id -->
+								<input id="memberId" type="text" class="input-field"
+									placeholder="會員帳號" required>
+								<!-- 修改會員密碼id -->
+								<input id="memberPassword" type="password" class="input-field"
+									placeholder="會員密碼" required> <input type="checkbox"
+									class="check-box">
+								<h3>記住密碼</h3>
+								<!-- 新增會員登入按鈕id和value -->
+								<button type="submit" class="submit-btn" onclick="intoLogin()"
+									id="BtnLoginMember" value="member">登入</button>
+								<div class="signup-link">
+									還沒加入會員嗎？<a href="./memberRegister.html">立即註冊</a>
+								</div>
+							</div>
+
+							<div id="clogin" class="input-group">
+								<!-- 修改廠商帳號id -->
+								<input id="supplierId" type="text" class="input-field"
+									placeholder="廠商帳號" required>
+								<!-- 修改廠商密碼id -->
+								<input id="supplierPassword" type="password" class="input-field"
+									placeholder="廠商密碼" required> <input type="checkbox"
+									class="check-box">
+								<h3>記住密碼</h3>
+								<!-- 新增廠商登入按鈕id和value -->
+								<button type="submit" class="submit-btn" onclick="intoCCC()"
+									id="BtnLoginSupplier" value="supplier">登入</button>
+								<div class="signup-link">
+									還沒加入到上架平台嗎？<a href="./storeRegister.html">立即註冊</a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="modal fade" id="exampleModal1" data-backdrop="static"
+		data-keyboard="false" tabindex="-1"
+		aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="staticBackdropLabel">
+						<font valign="middle" font face="fantasy"><img
+							src='./image/logo.jpg' width='55' style="float: left;"><b>&nbsp;&nbsp;Q&A</b></font>
+					</h4>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body" style="background-color: #E8FFFF">
+
+					<div class="accordion" id="accordionExample">
+						<div class="card" style="width: 100%; height: 100%;">
+							<div class="card-header" id="headingOne"
+								style="background-color: #FFFFD4">
+								<h2 class="mb-0">
+									<button class="btn btn-link collapsed" type="button"
+										data-toggle="collapse" data-target="#collapseOne"
+										aria-expanded="false" aria-controls="collapseOne">
+										不是會員可以購買嗎?</button>
+								</h2>
+							</div>
+
+							<div id="collapseOne" class="collapse show"
+								aria-labelledby="headingOne" data-parent="#accordionExample">
+								<div class="card-body">
+									要先註冊並且登入會員後才可以進行購買唷，註冊DIVING會員帳號完全免費，您可透過會員登入頁面進行註冊</div>
+							</div>
+						</div>
+						<div class="card" style="width: 100%; height: 100%;">
+							<div class="card-header" id="headingTwo"
+								style="background-color: #FFFFD4">
+								<h2 class="mb-0">
+									<button class="btn btn-link collapsed" type="button"
+										data-toggle="collapse" data-target="#collapseTwo"
+										aria-expanded="false" aria-controls="collapseTwo">
+										我的資料變了，要怎麼修改呢？</button>
+								</h2>
+							</div>
+							<div id="collapseTwo" class="collapse"
+								aria-labelledby="headingTwo" data-parent="#accordionExample">
+								<div class="card-body">若您需要修改個人資料，請到 "會員中心"
+									會員資料修改，頁面輸入您的會員帳號及密碼，進入您的個人資料區進行修改。</div>
+							</div>
+						</div>
+						<div class="card" style="width: 100%; height: 100%;">
+							<div class="card-header" id="headingThree"
+								style="background-color: #FFFFD4">
+								<h2 class="mb-0">
+									<button class="btn btn-link collapsed" type="button"
+										data-toggle="collapse" data-target="#collapseThree"
+										aria-expanded="false" aria-controls="collapseThree">
+										網站價格是不二價嗎？不能給折扣嗎？</button>
+								</h2>
+							</div>
+							<div id="collapseThree" class="collapse"
+								aria-labelledby="headingThree" data-parent="#accordionExample">
+								<div class="card-body">
+									本網價格已是優惠價格，通常比旅客自行包裝更加便宜，此外，透過本網訂購旅遊商品，節省您規劃行程的時間和人力，在旅遊途中也更有保障，故售價以本網公告為主，不再另行折扣或議價。
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal" style="background-color: #6E6EFF">關閉視窗</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="exampleModal" data-backdrop="static"
+		data-keyboard="false" tabindex="-1"
+		aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="staticBackdropLabel">
+						<font valign="middle"><img src='./image/logo.jpg'
+							width='55' style="float: left;">&nbsp;&nbsp;分公司據點</font>
+					</h4>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<ui> <i class="far fa-map fa-2x" style="float: left;"></i> <font
+						color=#E000E0 font face="微軟正黑體" valign="middle"><h5>&nbsp;總公司</h5></font>
+					<p>
+						台北市中正區公園路30號3F<br> Phone: (02)2382-6015<br>
+					</ui>
+					<p>
+					<hr color="#ff8000">
+					<ui> <i class="far fa-map fa-2x" style="float: left;"></i> <font
+						color=#E000E0 font face="微軟正黑體"><h5>&nbsp;東區分公司</h5></font>
+					<p>
+						台北市大安區忠孝東路四段169號4F之1<br> Phone:(02)2773-5243<br>
+					</ui>
+					<p>
+					<hr color="#ff8000">
+					<i class="far fa-map fa-2x" style="float: left;"></i><font
+						color=#E000E0 font face="微軟正黑體"><h5>&nbsp;桃園分公司</h5></font>
+					<p>
+						桃園市民權路6號2樓<br> Phone:(03)347-4878<br>
+						</ui>
+					<p>
+					<hr color="#ff8000">
+					<ui> <i class="far fa-map fa-2x" style="float: left;"></i> <font
+						color=#E000E0 font face="微軟正黑體"><h5>&nbsp;新竹分公司</h5></font>
+					<p>
+						新竹市中華路二段393號<br> Phone:(03)528-4678<br>
+					</ui>
+					<p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal" style="background-color: #8282FF">關閉視窗</button>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<header class="sticky-top">
+
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<a class="navbar-brand" href="./mainPage.html"> <img
+				src="./image/logo.jpg" alt="">
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+				<ul class="navbar-nav mr-auto">
+
+					<li class="nav-item"><a class="nav-link"
+						href="./mainPage.html">主頁</a></li>
+
+					<li class="nav-item"><a class="nav-link" href="./choose3.html">潛水區域</a>
+					</li>
+
+					<li class="nav-item"><a class="nav-link" href="./choose1.html">潛水行程</a>
+					</li>
+
+					<li class="nav-item"><a class="nav-link" onclick="toChart()"
+						style="cursor: pointer;">購物車</a></li>
+
+					<li class="nav-item"><a class="nav-link" href="#">聯絡我們</a></li>
+
+					<div class="egg">
+						<h5>李亞原起床囉</h5>
+					</div>
+
+					<div id="mac2m" class="membericon"></div>
+				</ul>
+
+			</div>
+		</nav>
+	</header>
+
+	<!-- 上面導覽列 -->
+	<!-- 圖片切換 -->
+
+	<!-- 圖片切換 -->
+	<hr style="background-color: #78C2C4; height: 20px;"></hr>
+	<div
+		style="background-image: url('./image/C-4.jpg'); background-size: cover;">
+		<div style="text-align: center; padding-top: 20px;">
+			<h3>
+				<span>潛點行程搜尋</span>
+			</h3>
+		</div>
+		<!-- 條件搜索 -->
+		<div id="selectSearch"
+			style="padding-top: 25px; padding-bottom: 80px; text-align: center;">
+			<div id="toLeft" style="padding-left: 200px;"></div>
+			<form class="form-inline">
+				<div class="" style="padding-left: 50px;">
+					<h4>
+						<span class="badge badge-primary">選擇前往城市</span>
+					</h4>
+				</div>
+				<div id="spotCity"
+					style="margin: 20px; width: 50px; padding-right: 10px;">
+					<select id="college-list" class="form-control"
+						onchange="changeCollege(this.selectedIndex)"></select>
+				</div>
+			</form>
+
+			<form class="form-inline">
+				<div class="" id=Selectbridge style="padding-left: 102px;">
+					<h4>
+						<span class="badge badge-primary">潛點區域選擇</span>
+					</h4>
+				</div>
+				<div id="spotCity" style="margin: 20px; width: 200px;">
+					<select id="sector-list" class="form-control"></select>
+				</div>
+				<div style="padding-bottom: 5px;">
+					<button type="button" class="btn btn-info" id="goSearch">搜尋潛點</button>
+				</div>
+			</form>
+		</div>
+		<!--  條件搜索 -->
+	</div>
+	<hr style="background-color: #78C2C4; height: 20px;"></hr>
+	<!-- 隨機行程 -->
+	<div id="showdiv"></div>
+	<!-- 隨機行程 -->
+	<!-- foot -->
+	<footer>
+		<div class="container">
+			<div class='row'>
+				<div class='col-md-4 text-left'>
+					<img src='Img/logo.jpg' width='85'>
+					<p>潛水 - 生態 - 挑戰自我</p>
+				</div>
+				<div class='col-md-4 text-left'>
+					<h4>連結</h4>
+					<ul>
+						<li><a href='./mainPage.html'>主頁</a></li>
+						<li><a href='./choose1.html'>最新行程</a></li>
+					</ul>
+					<ul>
+						<li><a class="nav-link" href="#" data-toggle="modal"
+							data-target="#exampleModal1" style="padding: 0px;">常見問題</a></li>
+						<li><a class="nav-link" href="#" data-toggle="modal"
+							data-target="#exampleModal" style="padding: 0px;">公司據點</a></li>
+					</ul>
+				</div>
+				<div class='col-md-4 text-left'>
+					<h4>聯絡我們</h4>
+					<p>
+						10041台北市中正區公園路30號3樓<br> Phone: 02-2382-6015<br> E-Mail:
+						<a href='mailto:s91143621027@gmail.com'>s91143621027@gmail.com</a>
+					</p>
+				</div>
+			</div>
+		</div>
+
+
+	</footer>
+	<!-- foot -->
+<div id="jjj">
+
+</div>
+  </footer>
+
+<script>
+		function toChart() {
+			
+			$.post("purchaseJudge.jsp", function(data){
+				$("#jjj").html(data);
+				if($("#judge").val()=="member"){
+					document.location.href = "./memberDetail.html?member";
+				} 
+				else {
+					alert("請先登入會員");
+				}
+				
+			});
+		}
+	</script>
+	
+	<script type="text/javascript">
+		//選項
+		var colleges = [ '台北', '新北', '基隆', '宜蘭', '台中', '屏東', '琉球', '澎湖', '綠島',
+				'蘭嶼', ];
+		var collegeSelect = document.getElementById("college-list");
+		var inner = "";
+		for (var i = 0; i < colleges.length; i++) {
+			inner = inner + '<option>' + colleges[i] + '</option>';
+		}
+		collegeSelect.innerHTML = inner;
+		var sectors = new Array();
+		sectors[0] = [ '松山' ];
+		sectors[1] = [ '萬里', '瑞芳', '貢寮' ];
+		sectors[2] = [ '中山' ];
+		sectors[3] = [ '頭城', '蘇澳', '蘭城' ];
+		sectors[4] = [ '西屯' ]
+		sectors[5] = [ '恆春' ];
+		sectors[6] = [ '琉球' ];
+		sectors[7] = [ '望安', '七美' ];
+		sectors[8] = [ '南寮', '中寮', '公館' ];
+		sectors[9] = [ '朗島', '椰油', '漁人' ];
+		function changeCollege(index) {
+			var Sinner = "";
+			for (var i = 0; i < sectors[index].length; i++) {
+				Sinner = Sinner + '<option>' + sectors[index][i] + '</option>';
+			}
+			var sectorSelect = document.getElementById("sector-list");
+			sectorSelect.innerHTML = Sinner;
+		}
+		changeCollege(document.getElementById("college-list").selectedIndex);
+
+		//選項
+	</script>
+	<script>
+		function logout() {
+
+			$.post("logout.jsp");
+			window.location.reload();
+		}
+	</script>
+
+	<script>
+		$(document).ready(function() {
+
+			$.post("Login.jsp", function(data) {
+				document.getElementById('mac2m').innerHTML = data;
+			});
+
+		});
+	</script>
+
+	<!-- 全部搜尋畫面 -->
+	<script>
+		$(document).ready(function() {
+			$.post("SpotAllServlet", function(data) {
+				$("#showdiv").html(data);
+			});
+		});
+	</script>
+	<!-- 全部搜尋畫面 -->
+	<!-- 會員登入 -->
+	<script>
+		function intoLogin() {
+			$.post("loginServlet", {
+				"actor" : $("#BtnLoginMember").val(),
+				"memberId" : $("#memberId").val(),
+				"memberPassword" : $("#memberPassword").val()
+			}, function(data) {
+				$("#mac2m").html(data);
+			});
+		}
+	</script>
+	<!-- 廠商登入 -->
+	<script>
+		function intoCCC() {
+			$.post("loginServlet", {
+				"actor" : $("#BtnLoginSupplier").val(),
+				"supplierId" : $("#supplierId").val(),
+				"supplierPassword" : $("#supplierPassword").val()
+			}, function(data) {
+				$("#mac2m").html(data);
+			});
+		}
+	</script>
+
+	<script>
+		var x = document.getElementById("mlogin");
+		var y = document.getElementById("clogin");
+		var z = document.getElementById("btn");
+
+		function register() {
+			x.style.left = "-400px";
+			y.style.left = "75px";
+			z.style.left = "110px";
+		}
+
+		function login() {
+			x.style.left = "75px";
+			y.style.left = "475px";
+			z.style.left = "0";
+		}
+	</script>
+	<!-- 區域選項 -->
+	<script>
+		$("#goSearch").click(querySpot);
+		function querySpot() {
+			$.post("spotServlet", {
+				"spotCity" : $("#college-list").find("option:selected").text(),
+				"spotArea" : $("#sector-list").find("option:selected").text()
+			}, function(data) {
+				//document.getElementById("show").innerHTML = data;
+				$("#showdiv").html(data);
+			});
+		}
+	</script>
+
+
+
+</body>
+</html>

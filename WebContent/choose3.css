@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+h1, h2, h3, h3, h4, h5, h6 {
+	font-family: 'Noto Sans TC', sans-serif;
+}
+
+p, a, input, textarea, span, li, ul, label {
+	font-family: 'Noto Sans TC', sans-serif;
+}
+/*head*/
+header nav img {
+	width: 100px;
+}
+
+header li {
+	margin: 0px 10px;
+}
+
+header {
+	background-color: white;
+}
+
+header .membericon {
+	position: absolute;
+	right: 20px;
+	display: flex;
+}
+
+header .membericon i {
+	margin-top: 6px;
+	margin-right: 6px;
+	color: #261E47;
+	font-size: 30px;
+}
+
+header .egg h5 {
+	color: white;
+}
+
+#selectSearch{
+	display: flex;
+}
+/*card*/
+.card{width:500px; height:350px;overflow:hidden;}
+.card img{transform:scale(1,1);transition: all 1s ease-out;}
+.card img:hover{transform:scale(1.2,1.2);}
+
+
+
+/*foot*/
+footer {
+	padding: 80px 0px
+	
+}
+/*				
+<select class="" style="width: 150px;">
+				 <option value="" disabled selected hidden>城市(City)</option>
+<optgroup label="北部區域">
+				</optgroup>
+				<option>臺北</option>
+				<option>新北</option>
+				<option>基隆</option>
+				<option>宜蘭</option>
+				<optgroup label="中部區域">
+				</optgroup>
+				<option>台中</option>
+				<optgroup label="南部區域">
+				</optgroup>
+				<option>屏東</option>
+				<optgroup label="離島">
+				</optgroup>
+				<option>澎湖</option>
+				<option>琉球</option>
+				<option>蘭嶼</option>
+				<option>綠島</option>
+			</select>
+
+
+				*/
+				
+				
+				/*<select class="">
+				<option value="" disabled selected hidden>縣市(Area)</option>
+				<option>望安</option>
+				<option>七美</option>
+				<option>恆春</option>
+				<option>朗島</option>
+				<option>漁人</option>
+				<option>椰油</option>
+				<option>南寮</option>
+				<option>中寮</option>
+				<option>公館</option>
+				<option>中山</option>
+				<option>萬里</option>
+				<option>瑞芳</option>
+				<option>貢寮</option>
+				<option>蘇澳</option>
+			</select>*/
+footer {
+	border-top: 1px solid rgba(0, 0, 0, 0.09);
+	padding-top: 20px;  
+}
+
+footer img {
+	margin-bottom: 30px;
+}
+
+footer h4 {
+	font-size: 20px;
+	margin-bottom: 35px;
+}
+
+footer ul {
+	list-style: none;
+	padding: 0;
+}
+
+footer ul a {
+	color: #707070;
+}
+
+footer a {
+	color: #f05f5c;
+}
+
+footer a:hover {
+	color: #f05f5c;
+}
+
+footer ul a:hover {
+	color: #707070;
+	text-decoration: none;
+	opacity: 0.8;
+}
+
+footer ul li {
+	margin-bottom: 10px;
+}
+
+footer ul {
+	float: left;
+	margin-right: 46px;
+}

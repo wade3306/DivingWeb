@@ -1,0 +1,267 @@
+h1,h2,h3,h3,h4,h5,h6{
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+p,a,input,textarea,span,li,ul,label{
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+*{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.carousel-caption {
+    top: 0;
+    bottom: auto;
+}
+
+header nav img{
+  width: 100px;
+}
+
+header li{
+  margin: 0px 10px;
+}
+
+header {
+  background-color: white;
+}
+
+header .membericon{
+  position: absolute;
+  right: 20px;
+  display: flex;
+
+}
+
+
+header .membericon i{
+  margin-top: 6px;
+  margin-right: 6px;
+  color: #261E47;
+  font-size: 30px;
+}
+
+header .egg h5{
+  color: white;
+}
+
+.media-body{
+  display: flex;
+  height: 400px;
+}
+
+.wrapper .title{
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+  user-select: none;
+  border-radius: 15px 15px 0 0;
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+}
+.wrapper form{
+  padding: 10px 30px 50px 30px;
+  background-color: #A5DEE4;
+}
+.wrapper form .field{
+  height: 50px;
+  width: 100%;
+  margin-top: 30px;
+  position: relative;
+}
+
+.wrapper form .field label{
+  padding-bottom: 35px;
+}
+
+.wrapper form .field input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 17px;
+  padding-left: 20px;
+  border: 1px solid lightgrey;
+  border-radius: 25px;
+}
+.wrapper form .field input:focus,
+form .field input:valid{
+  border-color: #4158d0;
+}
+.wrapper form .field label{
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  color: #999999;
+  font-weight: 400;
+  font-size: 17px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+form .field input:focus ~ label,
+form .field input:valid ~ label{
+  top: 0%;
+  font-size: 16px;
+  color: #4158d0;
+  background: #fff;
+  transform: translateY(-50%);
+}
+form .content{
+  display: flex;
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  align-items: center;
+  justify-content: space-around;
+}
+form .content .checkbox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form .content input{
+  width: 15px;
+  height: 15px;
+  background: red;
+}
+form .content label{
+  color: #262626;
+  user-select: none;
+  padding-left: 5px;
+}
+form .content .pass-link{
+  color: "";
+}
+form .field input[type="submit"]{
+  color: #fff;
+  border: none;
+  padding-left: 0;
+  margin-top: -10px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  transition: all 0.3s ease;
+}
+form .field input[type="submit"]:active{
+  transform: scale(0.95);
+}
+form .signup-link{
+  color: #262626;
+  margin-top: 20px;
+  text-align: center;
+}
+form .pass-link a,
+form .signup-link a{
+  color: #4158d0;
+  text-decoration: none;
+}
+form .pass-link a:hover,
+form .signup-link a:hover{
+  text-decoration: underline;
+}
+
+#slideImage h1{
+  font-family: 'Microsoft JhengHei', sans-serif;
+  font-size: 60px;
+}
+
+#slideImage h4{
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 20px;
+}
+
+.memberData{
+  width: 100%;
+  height: 100%;
+}
+
+#memDet a{
+  cursor: pointer;
+}
+
+#mm .contt{
+  display: flex;
+  margin-left: 30%;
+}
+
+.contt h4{
+  font-size: 18px;
+}
+
+#back{
+  position: absolute;
+  margin-left: 250px;
+}
+
+.contt #btt{
+  position: relative;
+  margin-left: 60%;
+  border-radius: 20px;
+  width: 150px;
+}
+
+.card{
+  max-width: 200px;
+}
+
+.card-title{
+  font-size: 22px;
+  color: #000;
+}
+
+.purchase-btn button{
+  font-size: 18px;
+  position: relative;
+  margin-left: 80%;
+  border-radius: 20px;
+  width: 150px;
+  height: 40px;
+}
+
+
+footer{
+	padding: 80px 0px
+}
+
+footer{
+	border-top: 1px solid rgba(0,0,0,0.09);
+}
+footer img{
+	margin-bottom: 30px;
+}
+footer h4{
+	font-size: 20px;
+    margin-bottom: 35px;
+
+}
+footer ul{
+	list-style: none;
+    padding: 0;
+}
+footer ul a{
+	color: #707070;
+}
+footer a{
+	color:#f05f5c;
+}
+footer a:hover{
+	color:#f05f5c;
+}
+footer ul a:hover{
+	color: #707070;
+	text-decoration: none;
+	opacity: 0.8;
+}
+footer ul li{
+	margin-bottom: 10px;
+}
+footer ul{
+	float: left;
+    margin-right: 46px;
+}

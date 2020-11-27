@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+h1,h2,h3,h3,h4,h5,h6{
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+p,a,input,textarea,span,li,ul,label{
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+
+div #carousel slide carousel-inner carousel-item active.img {
+	width: "1290";
+	height: "470";
+}
+
+.card {
+	overflow:hidden;
+}
+.card img{transform:scale(1,1);transition: all 1s ease-out;}
+.card img:hover{transform:scale(1.2,1.2);}
+
+
+.changeCar
+{
+	display:none;
+}

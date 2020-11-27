@@ -1,0 +1,164 @@
+
+.cart h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2.5em;
+}
+
+.cart p {
+  font-size: 1.5em;
+  color: #8a8a8a;
+  padding: 0px;
+  margin-left: 18px;
+}
+
+.cart input {
+  padding: 0.5em 0.3em;
+  font-size: 1.4em;
+  color: #8a8a8a;
+  text-align: center;
+}
+
+
+.cart img {
+  max-width: 9em;
+  width: 100%;
+  overflow: hidden;
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+
+.cart a {
+  text-decoration: none;
+}
+
+.cart {
+  margin: 2.5em;
+  overflow: hidden;
+  font: 62.5%/1.5em "Trebuchet Ms", helvetica;
+}
+
+.cart.is-closed {
+  height: 0;
+  margin-top: -2.5em;
+}
+
+.cart .table {
+  background: #ffffff;
+  border-radius: 0.6em;
+  overflow: hidden;
+  clear: both;
+  margin-bottom: 1.8em;
+  text-align: center;
+}
+
+
+.cart .layout-inline > * {
+  display: inline-block;
+}
+
+.cart .align-center {
+  text-align: center;
+}
+
+.cart .th {
+  background: #594f8d;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+
+
+.cart .tf {
+  background: #594f8d;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.cart .tf p {
+  color: #fff;
+  font-weight: bold;
+}
+
+.cart .col {
+  padding: 1em;
+  width: 12%;
+}
+
+.col-pro {
+  width: 44%;
+}
+
+.col-pro > * {
+  vertical-align: middle;
+}
+
+.col-qty {
+  text-align: center;
+  width: 17%;
+}
+
+.col-numeric p {
+  font: bold 1.8em helvetica;
+}
+
+.col-total p {
+  color: #12c8b1;
+}
+
+.tf .col {
+  width: 20%;
+}
+
+.row > div {
+  vertical-align: middle;
+}
+
+.row-bg2 {
+  background: #f7f7f7;
+}
+
+.col-qty > * {
+  vertical-align: middle;
+}
+
+.col-qty > input {
+  max-width: 2.6em;
+}
+
+
+.cart a.qty {
+  width: 1em;
+  line-height: 1em;
+  border-radius: 2em;
+  font-size: 2.5em;
+  font-weight: bold;
+  text-align: center;
+  background: #43ace3;
+  color: #fff;
+}
+
+.cart a.qty:hover {
+  background: #3b9ac6;
+}
+
+@media screen and ( max-width: 755px) {
+
+  .col-pro {
+    width: 35%;
+  }
+
+  .col-qty {
+    width: 22%;
+  }
+
+  img {
+    max-width: 100%;
+    margin-bottom: 1em;
+  }
+}
+
+@media screen and ( max-width: 591px) {
+
+}
